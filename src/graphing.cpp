@@ -87,61 +87,8 @@ void graphing::printEdges() {
 
 }
 
-template < class Graph > struct exercise_vertex
-{
-    //state vars
-    Graph& g;
-    const char* name;
 
-    //Constructor
-    exercise_vertex(Graph& g_, const char name_[]) : g(g_), name(name_) {}
-
-    //vertex descriptor
-    typedef typename graph_traits< Graph >::vertex_descriptor Vertex;
-    void operator()(const Vertex& v) const
-    {
-        typename property_map< Graph, vertex_index_t >::type vertex_id
-                = get(vertex_index, g);
-        std::cout << "vertex: " << name[get(vertex_id, v)] << std::endl;
-
-        // Write out the outgoing edges
-        std::cout << "\tout-edges: ";
-        typename graph_traits< Graph >::out_edge_iterator out_i, out_end;
-        typename graph_traits< Graph >::edge_descriptor e;
-        for (boost::tie(out_i, out_end) = out_edges(v, g); out_i != out_end; ++out_i)
-        {
-            e = *out_i;
-            Vertex src = source(e, g), targ = target(e, g);
-            std::cout << "(" << name[get(vertex_id, src)] << ","
-                      << name[get(vertex_id, targ)] << ") ";
-        }
-        std::cout << std::endl;
-
-        // Write out the incoming edges
-        std::cout << "\tin-edges: ";
-        typename graph_traits< Graph >::in_edge_iterator in_i, in_end;
-        for (boost::tie(in_i, in_end) = in_edges(v, g); in_i != in_end; ++in_i)
-        {
-            e = *in_i;
-            Vertex src = source(e, g), targ = target(e, g);
-            std::cout << "(" << name[get(vertex_id, src)] << ","
-                      << name[get(vertex_id, targ)] << ") ";
-        }
-        std::cout << std::endl;
-
-        // Write out all adjacent vertices
-        std::cout << "\tadjacent vertices: ";
-        typename graph_traits< Graph >::adjacency_iterator ai, ai_end;
-        for (boost::tie(ai, ai_end) = adjacent_vertices(v, g); ai != ai_end;
-             ++ai)
-            std::cout << name[get(vertex_id, *ai)] << " ";
-        std::cout << std::endl;
-    }
-
-};
-
-
-void graphing::calc_clusters()
+void graphing::calc_clusters(std::string output)
 {
     int vertices_count = num_vertices(g);
     auto edge_count = num_edges(g);
@@ -255,7 +202,7 @@ void graphing::calc_clusters()
     using Component = int;
     using Mapping = std::map<Graph::vertex_descriptor, Component>;
     int n2 = boost::connected_components(g, boost::make_assoc_property_map(mappings));
-    std::ofstream out_file ("data/communities.txt");
+    std::ofstream out_file (output);
     for (Component c = 0; c<n2; ++c) {
         std::cout << "component " << c << ":";
         out_file << "Community " << c << ":";

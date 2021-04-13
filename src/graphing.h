@@ -40,7 +40,7 @@ public:
     explicit graphing(std::string fileName);
     void printVertices();
     void printEdges();
-    void calc_clusters();
+    void calc_clusters(std::string output);
 };
 using namespace boost;
 #endif //COMMUNITYDETECTION_GRAPHING_H
