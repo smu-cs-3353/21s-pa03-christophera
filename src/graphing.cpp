@@ -34,7 +34,7 @@ graphing::graphing(std::string fileName) {
         sort(vec.begin(), vec.end());
         std::vector<int>::iterator it;
         it = std::unique(vec.begin(), vec.end());
-        vec.resize(distance(vec.begin(),it));
+        vec.resize(std::distance(vec.begin(),it));
         count_vertices = vec.size();
 
         Graph temp(count_vertices);
