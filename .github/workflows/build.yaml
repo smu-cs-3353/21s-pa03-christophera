@@ -54,7 +54,7 @@ jobs:
       - name: Run the project
         working-directory: ${{runner.workspace}}/build
         shell: bash
-        run: ./$EXE_NAME $OUTPUT_FILES
+        run: ./$EXE_NAME $INPUT_FILES $OUTPUT_FILES
 
       - name: Copy output files to artifact directory
         working-directory: ${{runner.workspace}}/build
