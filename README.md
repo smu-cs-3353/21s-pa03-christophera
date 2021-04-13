@@ -4,7 +4,7 @@
 
 Community detection in networks is a popular area of graph theory.  The Girvan-Newman algorithm is a relatively new option for performing community detection in networks/graphs.  
 
-This project implements the Girvan-Newman algorithm using the Boost Graph Library tp detect sub communities within a given graph.  You can find more about Girvan-Newman in the original paper and also some other resources:
+This project implements the Girvan-Newman algorithm using the Boost Graph Library to detect sub communities within a given graph.  You can find more about Girvan-Newman in the original paper and also some other resources:
 * Girvan M. and Newman M. E. J., [Community structure in social and biological networks](https://www.pnas.org/content/99/12/7821), Proc. Natl. Acad. Sci. USA 99, 7821–7826 (2002)
 * Chapter 10 Section 2 of [Mining Massive Data Sets](http://infolab.stanford.edu/~ullman/mmds/book0n.pdf)
 * [Social and Information Network Analysis Course Slide Deck 14](http://snap.stanford.edu/class/cs224w-2010/slides/14-communities_annot.pdf)
