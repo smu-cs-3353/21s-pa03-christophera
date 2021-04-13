@@ -10,13 +10,14 @@ This project implements the Girvan-Newman algorithm using the Boost Graph Librar
 * [Social and Information Network Analysis Course Slide Deck 14](http://snap.stanford.edu/class/cs224w-2010/slides/14-communities_annot.pdf)
 
 ## Requirements 
+Input file containing the data for the graph to be worked on, in the format demonstrated below in the example network input.
 
-This project requires two arguments to run:
+This project also requires two arguments to run:
   1. input file name
   2. output file Name
 
 ## Output
-Outputs the communities detected into a separate file. 
+Outputs the communities detected into a separate file specified by the secound arguments given to the program. 
 Each community should have a heading `Community X` followed by a list of nodes that are part of that community each on a separate line. 
 
 You can use the [NetworkX](https://networkx.org/), a Python network analysis library to generate graphs to use for testing.  Take a look at the Graph Generator functionality here The library also has 4 social network graphs already included.  You'll just need to write them out to a file in the format below so your program can read them. 
@@ -33,7 +34,7 @@ D - F
 G - A
 G - B
 ```
-
+NOTE: Verticies Must be named (A....Z) and the first line should be the number of edges
 Example network output:
 
 ```text
