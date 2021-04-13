@@ -5,9 +5,8 @@
 
 using namespace boost;
 
-int main(int,char*[])
-{
-    std::string name = "input.txt";
+int main (int argc, char * argv[]) {
+    std::string name = argv[1];
     graphing myGraph(name);
     myGraph.calc_clusters();
     return 0;

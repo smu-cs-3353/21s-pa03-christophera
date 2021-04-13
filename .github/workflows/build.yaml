@@ -4,6 +4,7 @@ on: [push]
 
 env:
   EXE_NAME: 21s-pa03-christophera
+  INPUT_FILES: input.txt
   OUTPUT_FILES: communities.txt
 
 jobs:
