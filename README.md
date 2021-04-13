@@ -24,16 +24,14 @@ You can use the [NetworkX](https://networkx.org/), a Python network analysis lib
 Example network input:
 
 ```text
-9
-A - B
+7
 A - C
 B - C
-B - D
-D - G
-D - F
+C - D
 D - E
-G - F
-E - F
+D - F
+G - A
+G - B
 ```
 
 Example network output:
