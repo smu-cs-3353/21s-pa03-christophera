@@ -197,20 +197,21 @@ void graphing::calc_clusters(std::string output)
         calc_edge_betweeness(g);
         remove_highest_edge_scores(g);
     }
-    std::cout<<"optimal removals: " << optimal_removals<<std::endl;
+    std::cout<<"optimal removals: " << optimal_removals<<std::endl<<std::endl;
     //finds subcomponents of the graph after deleting edges
     using Component = int;
     using Mapping = std::map<Graph::vertex_descriptor, Component>;
     int n2 = boost::connected_components(g, boost::make_assoc_property_map(mappings));
     std::ofstream out_file (output);
+    const char name[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ[/]^_`abcdefghijklmnopqrstuvwxyz";
     for (Component c = 0; c<n2; ++c) {
-        std::cout << "component " << c << ":";
-        out_file << "Community " << c << ":";
+        std::cout << "Component " << c << std::endl;
+        out_file << "Community " << c << std::endl;
         for (auto& mapping : mappings)
             if (mapping.second == c)
             {
-                std::cout << " " << mapping.first;
-                out_file << " " << mapping.first;
+                std::cout << " " << name[mapping.first]<<std::endl;
+                out_file << " " << name[mapping.first]<<std::endl;
             }
         std::cout << "\n";
         out_file << "\n";
