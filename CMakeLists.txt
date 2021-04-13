@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
-project(21s-pa03-christophera.exe)
+project(21s-pa03-christophera)
+set (EXE_NAME 21s-pa03-christophera)
 
 set(CMAKE_CXX_STANDARD 14)
 set(Boost_INCLUDE_DIR boost_1_66_0)
@@ -15,4 +16,4 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS_DEBUG "-g -Wall -Wextra")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
-add_executable(21s-pa03-christophera src/main.cpp src/graphing.cpp src/graphing.h)
+add_executable(${EXE_NAME} src/main.cpp src/graphing.cpp src/graphing.h)
