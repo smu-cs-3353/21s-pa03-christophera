@@ -53,7 +53,7 @@ jobs:
       - name: Run the project
         working-directory: ${{runner.workspace}}/build
         shell: bash
-        run: ./$EXE_NAME $OUTPUT_FILES
+        run: ./21s-pa03-christophera/$EXE_NAME $OUTPUT_FILES
 
       - name: Copy output files to artifact directory
         working-directory: ${{runner.workspace}}/build
