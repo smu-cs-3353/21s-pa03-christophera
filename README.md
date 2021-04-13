@@ -22,6 +22,7 @@ Each community should have a heading `Community X` followed by a list of nodes t
 
 You can use the [NetworkX](https://networkx.org/), a Python network analysis library to generate graphs to use for testing.  Take a look at the Graph Generator functionality here The library also has 4 social network graphs already included.  You'll just need to write them out to a file in the format below so your program can read them. 
 
+## Example
 Example network input:
 
 ```text
