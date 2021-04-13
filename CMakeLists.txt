@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(21s-pa03-christophera)
+project(21s-pa03-christophera.exe)
 
 set(CMAKE_CXX_STANDARD 14)
 set(Boost_INCLUDE_DIR boost_1_66_0)
