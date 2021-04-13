@@ -36,3 +36,17 @@ G - F
 E - F
 ```
 
+Example network output:
+
+```text
+Community 0
+ A
+ B
+ C
+ G
+
+Community 1
+ D
+ E
+ F
+```
