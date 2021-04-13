@@ -35,6 +35,8 @@ G - A
 G - B
 ```
 NOTE: Verticies Must be named (A....Z) and the first line should be the number of edges
+
+
 Example network output:
 
 ```text
