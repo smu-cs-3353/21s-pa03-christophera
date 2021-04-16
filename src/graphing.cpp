@@ -412,6 +412,7 @@ void graphing::calc_edge_betweeness(Graph& g) {
         //add the scores from our local container(edges_and_their_flow) to the bundled property of the appropriate edge of our graph
         for (auto it=edges_and_their_flow.begin(); it!=edges_and_their_flow.end(); ++it)
         {
+            if(!std::isnan(it->second))
             g[boost::edge(it->first.first,it->first.second,g).first].score +=it->second;
         }
         std::fill_n(d, num_vertices(g), 0);
